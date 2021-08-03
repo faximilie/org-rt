@@ -37,6 +37,8 @@
 
 ;; TODO: Distinguish between task and tickets more clearly
 ;; TODO: Add docstrings to every function
+;; TODO: Deal with archives better in org-id
+;; TODO: Do better caching (have our own org-id cache?)
 ;; TODO: introduce Point or Marker or ID
 ;;           - Allow calling most functions without ID and only work at current point
 ;;           - Reduce chance of incorrect ID being used (auto-translate)
