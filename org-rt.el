@@ -175,7 +175,7 @@ and to remove upon de-initialization")
 # Finish with C-c C-c or cancel with C-c C-k\n\n"
   "A string that will be inserted when capturing a note in org-rt")
 
-(defconst org-rt-link-path "'%s/Ticket/Display.html?id=%s'"
+(defconst org-rt-link-path "%s/Ticket/Display.html?id=%s"
   "The path of a ticket in the RT UI as a string format
 The first %s is the base URI (e.g. https://rt.com/rt/)
 The second %s is the id of the ticket")
@@ -219,7 +219,7 @@ Specifically HELM searches")
 :PROPERTIES:
 :ID: RT%:id
 :RT_ID: %:id
-:URL: %(format \"%s/Ticket/Display.html?id=\" (url-encode-url org-rt-link-endpoint))%:id
+:URL: %(org-rt-link--get-url \"\")%:id
 :Owner: %:owner
 :Creator: %:creator
 :Status: %:status
@@ -366,7 +366,7 @@ If spacemacs is installed it will add itself to the minor-mode-map there"
 (defcustom org-rt-link-endpoint "https:////rt.remoteserver.com.au/rt"
   "The URL of the RT instance")
 
-(defcustom org-rt-link-open "firefox %s"
+(defcustom org-rt-link-open "firefox '%s'"
   "The command to run to open the link.
 Where %s is replaced with the URL of the ticket")
 

@@ -28,7 +28,7 @@ Load the `org-rt.el` file into emacs
 :PROPERTIES:
 :ID: RT%:id
 :RT_ID: %:id
-:URL: %(format \"%s/Ticket/Display.html?id=\" (url-encode-url org-rt-link-endpoint))%:id
+:URL: %(org-rt-link--get-url \"\")%:id
 :Owner: %:owner
 :Creator: %:creator
 :Status: %:status
