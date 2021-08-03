@@ -214,7 +214,10 @@ Specifically HELM searches")
   :group 'org-rt)
 
 (defcustom org-rt-capture-templates `(("W" "RT" entry
-                                        (file+headline "~/Documents/Notes/inbox.org" "Tasks")
+                                        (file+headline ,(expand-file-name
+                                                        "inbox.org"
+                                                        org-directory)
+                                                       "Tasks")
                                         "* TODO [[rt:%:id][RT%:id]] - %:subject
 :PROPERTIES:
 :ID: RT%:id
