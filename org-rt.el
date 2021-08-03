@@ -1682,11 +1682,8 @@ if it is nil it will add as a member"
                                   (or parsed-value property-value))))))
 (defun org-rt--org-after-store-log-note ()
   (advice-remove 'org-store-log-note 'org-rt--org-after-store-log-note)
-  (let ((new-count
-         (seq-length (org-rt--find-state-notes-pom org-rt--todo-pom))))
     (org-rt--complete-task-pom
      org-rt--todo-pom nil t ;;(/= org-rt-pre-close-note-count new-count) TODO FIX
-     )
     )
   (setq org-rt-pre-close-note-count 0)
   (setq org-rt--todo-pom nil))
@@ -1694,8 +1691,6 @@ if it is nil it will add as a member"
 (defun org-rt--org-after-todo-done (pom)
   (setq org-rt--todo-pom pom)
   (if (ignore-errors (set-buffer "*Org Note*"))
-      (setq org-rt-pre-close-note-count
-            (seq-length (org-rt--find-state-notes-pom pom)))
       (advice-add 'org-store-log-note :after 'org-rt--org-after-store-log-note)
     (org-rt--complete-task-pom pom)
     )
