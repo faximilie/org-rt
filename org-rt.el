@@ -472,16 +472,20 @@ Where %s is replaced with the URL of the ticket")
 (defun org-rt--join (lst sep &optional pre post)
   (mapconcat (function (lambda (x) (concat pre x post))) lst sep))
 
-;; TODO make string &rest and deal with listp
-(defun org-rt--string-match-group (regexp group string)
-  "Return a match `group' from `string' that matches `regexp'
+(defun org-rt--string-match-group (regexp group &rest strings)
+  "Return a single string OR a list of matches `group' from `strings'
+that matches `regexp'.
 This is a helper function designed to shrink the lines of code"
-  (when string
-    (prog2
-        (string-match regexp string)
-        (match-string-no-properties group string)
-      ))
-  )
+  (when strings
+    (let ((strings (flatten-list strings)))
+      (if (= (seq-length strings) 1)
+          (prog2
+              (string-match regexp (car strings))
+              (ignore-errors (match-string-no-properties
+                              group (car strings))))
+        (mapcar (lambda (string)
+                  (org-rt--string-match-group regexp group string))
+                  strings)))))
 
 (defun org-rt--not-cdr (element)
   "Helper function that returns t if `cdr' of `element' is nil"
