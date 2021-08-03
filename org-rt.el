@@ -1165,41 +1165,36 @@ if `user' is nil `org-rt-username' will be used"
   "This will find the subtask heading within the heading found at `pom' or point if `pom' is nil
 if `create' is non-nil it will create the heading"
   (org-with-point-at pom
-    (let ((next-heading (save-excursion (org-get-next-sibling))))
-      (if (re-search-forward
-           (format org-complex-heading-regexp-format
-                   (regexp-quote "Subtasks"))
-           next-heading
-           t)
-          (point-marker)
+    (org-narrow-to-subtree)
+    (if (re-search-forward
+         (format org-complex-heading-regexp-format
+                 (regexp-quote "Subtasks"))
+         nil
+         t)
+        (point-marker)
 
-        (when create
-          (save-excursion
-            (evil-save-state
-              (if (org-goto-first-child)
-                  (org-insert-heading '(16))
-                (org-insert-subheading nil))
-              (insert "Subtasks"))
-            (point-marker))))
-      )))
+      (when create
+        (save-excursion
+          (evil-save-state
+            (if (org-goto-first-child)
+                (org-insert-heading '(16))
+              (org-insert-subheading nil))
+            (insert "Subtasks"))
+          (point-marker))))
+    ))
 
 (defun org-rt--find-state-notes-pom (&optional pom)
-  (org-with-point-at
-      pom
-    (let* (
-           (next-heading (save-excursion (if (org-goto-first-child)
-                                             (point-marker)
-                                           (org-get-next-sibling))))
-          (notes '()))
-      (while (re-search-forward org-rt-state-notes-regexp next-heading t)
-        (let* ((next-item (ignore-errors (save-excursion (org-next-item))))
-               (note-start (save-excursion (re-search-forward "[ \t]+" next-item t)))
-               (list-end (unless next-item (save-excursion (org-end-of-item-list))))
-               (note-end (or next-item list-end)))
-          (when (and note-end note-start
-                     (org-with-point-at note-start (org-in-item-p)))
-            (push (buffer-substring-no-properties note-start (- note-end 1))
-                  notes))))
+  (org-with-point-at pom
+    (org-back-to-heading)
+    (org-narrow-to-subtree)
+    (let ((notes '()))
+      (while (re-search-forward org-rt-state-notes-regexp nil t)
+        (org-with-wide-buffer
+         (org-narrow-to-element)
+         (let ((note-start (save-excursion (re-search-forward "[ \t]+" nil t))))
+           (when note-start
+             (push (buffer-substring-no-properties note-start (- (point-max) 1))
+                   notes)))))
       (reverse notes)))
   )
 (defun org-rt--find-state-notes (&optional id)
