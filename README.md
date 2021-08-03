@@ -4,6 +4,12 @@
 
  Personally I use it at work, so it should be fine, but your millage may vary.
 
+ It's essentially a way of automatically managing RT tickets in orgmode, with a
+ very basic one way sync (currently)
+
+ Changes made in orgmode are synced (hopefully automatically) to the remote RT
+ ticket. New RT tickets are created, but they are not updated from RT again.
+
 ## Usage
 
 Load the `org-rt.el` file into emacs
