@@ -402,7 +402,7 @@ Where %s is replaced with the URL of the ticket")
                    )
        )
   )
-;; TODO Work without heading
+
 (defun org-rt--note-convert-region-html (&optional keep-toc)
     ;; Go back to the begining of the buffer
   (org-html-convert-region-to-html)
