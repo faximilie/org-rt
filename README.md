@@ -85,3 +85,19 @@ during periods of idle.
 | C-c L c | , R L c        | org-rt-remove-child         |
 | C-c L b | , R L b        | org-rt-remove-blocker       |
 | C-c L B | , R L B        | org-rt-remove-blocking      |
+
+## Caveats
+
+Some specific exceptions
+
+### The description of a ticket is always plaintext
+
+I could not find a way to submit an HTML ticket description upon creation for
+RT, thus all tickets will be created with a plaintext description even when
+`org-rt-note-export-html` is non-nil
+
+### No bi-directional or automatic syncing
+
+Changes made in orgmode are synced to RT but the same is not true in reverse
+currently. Changes made in orgmode are also only synced when done through a
+command or they trigger a hook.
