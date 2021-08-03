@@ -56,32 +56,32 @@ Once enabled new tickets assigned to your user should be created automatically
 during periods of idle.
 
 ## Default keymap
-| Keys    | Function                    |
-| ------- | --------------------------- |
-| C-c y   | org-rt-task-yank-id         |
-| C-c Y   | org-rt-task-yank-url        |
-| C-c o   | org-rt-task-open-url        |
-| C-c O   | org-rt-task-open            |
-| C-c c   | org-rt-create-ticket        |
-| C-c C   | org-rt-task-comment         |
-| C-c d   | org-rt-task-complete        |
-| C-c f   | org-rt-task-find-or-create  |
-| C-c F   | org-rt-assigned-fetch       |
-| C-c G   | org-rt-task-goto            |
-| C-c T   | org-rt-ticket-take          |
-| C-c g p | org-rt-goto-parent          |
-| C-c g c | org-rt-goto-child           |
-| C-c g b | org-rt-goto-blocker         |
-| C-c g B | org-rt-goto-blocking        |
-| C-c l r | org-rt-add-reference        |
-| C-c l R | org-rt-add-referenced-by    |
-| C-c l p | org-rt-add-parent           |
-| C-c l c | org-rt-add-child            |
-| C-c l b | org-rt-add-blocker          |
-| C-c l B | org-rt-add-blocking         |
-| C-c L r | org-rt-remove-reference     |
-| C-c L R | org-rt-remove-referenced-by |
-| C-c L p | org-rt-remove-parent        |
-| C-c L c | org-rt-remove-child         |
-| C-c L b | org-rt-remove-blocker       |
-| C-c L B | org-rt-remove-blocking      |
+| Keys    | Spacemacs Keys | Function                    |
+| ------- | -------------- | --------------------------- |
+| C-c y   | , R y          | org-rt-task-yank-id         |
+| C-c Y   | , R Y          | org-rt-task-yank-url        |
+| C-c o   | , R o          | org-rt-task-open-url        |
+| C-c O   | , R O          | org-rt-task-open            |
+| C-c c   | , R c          | org-rt-create-ticket        |
+| C-c C   | , R C          | org-rt-task-comment         |
+| C-c d   | , R d          | org-rt-task-complete        |
+| C-c f   | , R f          | org-rt-task-find-or-create  |
+| C-c F   | , R F          | org-rt-assigned-fetch       |
+| C-c G   | , R G          | org-rt-task-goto            |
+| C-c T   | , R T          | org-rt-ticket-take          |
+| C-c g p | , R g p        | org-rt-goto-parent          |
+| C-c g c | , R g c        | org-rt-goto-child           |
+| C-c g b | , R g b        | org-rt-goto-blocker         |
+| C-c g B | , R g B        | org-rt-goto-blocking        |
+| C-c l r | , R l r        | org-rt-add-reference        |
+| C-c l R | , R l R        | org-rt-add-referenced-by    |
+| C-c l p | , R l p        | org-rt-add-parent           |
+| C-c l c | , R l c        | org-rt-add-child            |
+| C-c l b | , R l b        | org-rt-add-blocker          |
+| C-c l B | , R l B        | org-rt-add-blocking         |
+| C-c L r | , R L r        | org-rt-remove-reference     |
+| C-c L R | , R L R        | org-rt-remove-referenced-by |
+| C-c L p | , R L p        | org-rt-remove-parent        |
+| C-c L c | , R L c        | org-rt-remove-child         |
+| C-c L b | , R L b        | org-rt-remove-blocker       |
+| C-c L B | , R L B        | org-rt-remove-blocking      |
