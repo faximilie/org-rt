@@ -283,11 +283,10 @@ This can be any key defined in `org-capture-templates' or
   :group 'org-rt)
 
 (defcustom org-rt-custom-resolve-list
-  '(("CF.{Action Performed}" . "Task Completed")
-    ("CF.{Close Reason}" . "Completed")
-    ("CF.{Type}" . "Change Request")
-    ("CF.{Service}" . "Server"))
-  "A list of cons to set on the ticket when closing"
+  nil
+  "A list of cons to set on the ticket when closing
+This is for my usecase where a ticket needs to have specific custom
+fields set before it can be marked as resolved."
   :type '(alist :key-type string :value-type string)
   :group 'org-rt)
 
