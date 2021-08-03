@@ -88,7 +88,7 @@
 (defconst org-rt-history-short-regexp "^\\([[:digit:]]+\\): \\(.+\\)$"
   "The regex to find short history entries within an RT 1.0 API response")
 
-(defconst org-rt-link-regexp "fsck\\.com-rt://.+/\\([[:digit:]]+\\),*$";"^\\(\\([.{} #[:alpha:]]+\\): fsck\\.com-\\(.*/\\([[:digit:]]+\\)\\),*\\)$\\|^--$";"\\(^[.{}#[:alpha:]]+: fsck\\.com-.*\\)$\\|^--$"
+(defconst org-rt-link-regexp "fsck\\.com-rt://.+/\\([[:digit:]]+\\),*$"
   "The regex to find a link within an RT 1.0 API response")
 
 (defconst org-rt-content-key-regexp "^\\(Content\\): \\(.+\\)$"
