@@ -1,14 +1,18 @@
 # org-rt
- An orgmode interface to the RT ticketing system, this is currently working but
- very roughly, plenty of work to do, and bugs to squash.
 
- Personally I use it at work, so it should be fine, but your millage may vary.
+This project is in dire need of a rework, and I have not touched it.
+Proceed at your own peril.
 
- It's essentially a way of automatically managing RT tickets in orgmode, with a
- very basic one way sync (currently)
+An orgmode interface to the RT ticketing system, this is currently working but
+very roughly, plenty of work to do, and bugs to squash.
 
- Changes made in orgmode are synced (hopefully automatically) to the remote RT
- ticket. New RT tickets are created, but they are not updated from RT again.
+Personally I use it at work, so it should be fine, but your millage may vary.
+
+It's essentially a way of automatically managing RT tickets in orgmode, with a
+very basic one way sync (currently)
+
+Changes made in orgmode are synced (hopefully automatically) to the remote RT
+ticket. New RT tickets are created, but they are not updated from RT again.
 
 ## Usage
 
